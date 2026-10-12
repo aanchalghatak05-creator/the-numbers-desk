@@ -1,30 +1,367 @@
+
 <!doctype html>
-<html lang="en-GB">
+<html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="The Numbers Desk is an independent data-journalism project using public records, code and careful reporting to explain the numbers shaping everyday life across the UK.">
-  <title>The Numbers Desk — Independent data journalism</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The Numbers Desk is an independent global data-journalism publication using public records, data analysis and investigative reporting to explain the forces shaping our world.">
+  <meta name="theme-color" content="#f7f6f0">
+  <title>The Numbers Desk — Global Data Journalism</title>
   <style>
-    :root{--ink:#17211d;--muted:#59645e;--paper:#f7f6f0;--card:#fffef9;--line:#d9ddd4;--accent:#c3482e;--green:#254b3d;--max:1120px}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.55}a{color:inherit}header,main,footer{width:min(var(--max),calc(100% - 40px));margin-inline:auto}.topbar{display:flex;align-items:center;justify-content:space-between;padding:25px 0;border-bottom:1px solid var(--line);gap:18px}.brand{font-size:1.05rem;font-weight:900;letter-spacing:.08em;text-decoration:none}.brand span{color:var(--accent)}nav{display:flex;gap:22px;flex-wrap:wrap}nav a{text-decoration:none;font-size:.9rem;color:var(--muted)}nav a:hover{color:var(--accent)}.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;font-weight:800;color:var(--accent)}.hero{padding:90px 0 76px;display:grid;grid-template-columns:1.3fr .7fr;gap:44px;align-items:end}.hero h1{font-family:Georgia,serif;font-weight:500;letter-spacing:-.055em;font-size:clamp(3.5rem,8vw,7rem);line-height:.94;margin:20px 0 24px;max-width:780px}.hero p{font-size:1.2rem;max-width:630px;color:var(--muted)}.hero-note{border-left:3px solid var(--accent);padding:5px 0 5px 20px;color:var(--muted);font-size:.92rem}.hero-note strong{display:block;color:var(--ink);font-size:1rem;margin-bottom:8px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;border-top:1px solid var(--line);padding-top:26px;margin-bottom:24px}.section-head h2{font-family:Georgia,serif;font-size:2.4rem;font-weight:500;letter-spacing:-.035em;margin:0}.section-head p{margin:0;color:var(--muted);font-size:.9rem}.stories{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:90px}.story{display:flex;flex-direction:column;min-height:330px;background:var(--card);border:1px solid var(--line);padding:24px;text-decoration:none;transition:transform .18s,border-color .18s}.story:hover{transform:translateY(-3px);border-color:var(--accent)}.story .tag{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:var(--green)}.story h3{font-family:Georgia,serif;font-size:1.8rem;line-height:1.1;font-weight:500;letter-spacing:-.025em;margin:24px 0 14px}.story p{color:var(--muted);font-size:.95rem}.story .status{margin-top:auto;padding-top:24px;color:var(--accent);font-size:.75rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase}.method{background:var(--green);color:#f9f8f0;padding:48px;display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;margin-bottom:72px}.method h2{font-family:Georgia,serif;font-size:2.4rem;font-weight:500;line-height:1.05;margin:10px 0}.method p{color:#d5dfd8}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.steps h3{font-size:1rem;margin:0 0 8px}.steps p{font-size:.9rem;margin:0}.about{display:grid;grid-template-columns:1fr 1fr;gap:40px;padding:0 0 80px}.about h2{font-family:Georgia,serif;font-size:2.3rem;font-weight:500;margin:8px 0}.about p{color:var(--muted)}.about-links{display:flex;flex-direction:column;gap:12px}.about-links a{font-weight:700;text-decoration-thickness:1px;text-underline-offset:4px}.contact{border-top:1px solid var(--line);padding:28px 0 40px;display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:.82rem}.contact strong{color:var(--ink)}@media(max-width:760px){header,main,footer{width:min(100% - 28px,var(--max))}.topbar{align-items:flex-start;flex-direction:column}.hero{grid-template-columns:1fr;padding:60px 0 52px;gap:20px}.hero h1{font-size:clamp(3.3rem,16vw,5.5rem)}.stories{grid-template-columns:1fr;margin-bottom:60px}.story{min-height:260px}.method{grid-template-columns:1fr;padding:28px;gap:24px}.steps{grid-template-columns:1fr}.about{grid-template-columns:1fr;gap:16px;padding-bottom:55px}.section-head{align-items:flex-start;flex-direction:column}.contact{flex-direction:column}}
+    :root {
+      --ink: #17211d;
+      --muted: #59645e;
+      --paper: #f7f6f0;
+      --card: #fffef9;
+      --line: #d9ddd4;
+      --accent: #c3482e;
+      --green: #254b3d;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+    header, main, footer {
+      width: min(var(--max), calc(100% - 40px));
+      margin-inline: auto;
+    }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 25px 0;
+      border-bottom: 1px solid var(--line);
+      gap: 18px;
+    }
+    .brand {
+      font-size: 1.05rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .brand span { color: var(--accent); }
+    nav { display: flex; gap: 22px; flex-wrap: wrap; }
+    nav a {
+      text-decoration: none;
+      font-size: .9rem;
+      color: var(--muted);
+    }
+    nav a:hover, .about-links a:hover { color: var(--accent); }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: .72rem;
+      font-weight: 800;
+      color: var(--accent);
+    }
+    .hero {
+      padding: 90px 0 76px;
+      display: grid;
+      grid-template-columns: 1.3fr .7fr;
+      gap: 44px;
+      align-items: end;
+    }
+    .hero h1 {
+      font-family: Georgia, serif;
+      font-weight: 500;
+      letter-spacing: -.055em;
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      line-height: .94;
+      margin: 20px 0 24px;
+      max-width: 780px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 630px;
+      color: var(--muted);
+    }
+    .hero-note {
+      border-left: 3px solid var(--accent);
+      padding: 5px 0 5px 20px;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+    .hero-note strong {
+      display: block;
+      color: var(--ink);
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 20px;
+      border-top: 1px solid var(--line);
+      padding-top: 26px;
+      margin-bottom: 24px;
+    }
+    .section-head h2, .method h2, .about h2 {
+      font-family: Georgia, serif;
+      font-weight: 500;
+      letter-spacing: -.035em;
+    }
+    .section-head h2 { font-size: 2.4rem; margin: 0; }
+    .section-head p { margin: 0; color: var(--muted); font-size: .9rem; }
+    .stories {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 70px;
+    }
+    .story {
+      display: flex;
+      flex-direction: column;
+      min-height: 330px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 24px;
+      text-decoration: none;
+      transition: transform .18s, border-color .18s;
+    }
+    .story:hover { transform: translateY(-3px); border-color: var(--accent); }
+    .story .tag {
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: var(--green);
+    }
+    .story h3 {
+      font-family: Georgia, serif;
+      font-size: 1.8rem;
+      line-height: 1.1;
+      font-weight: 500;
+      letter-spacing: -.025em;
+      margin: 24px 0 14px;
+    }
+    .story p { color: var(--muted); font-size: .95rem; }
+    .story .status {
+      margin-top: auto;
+      padding-top: 24px;
+      color: var(--accent);
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+    .coverage {
+      margin-bottom: 80px;
+    }
+    .coverage-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+    .coverage-item {
+      background: var(--card);
+      padding: 24px;
+    }
+    .coverage-item h3 {
+      font-family: Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: 500;
+      margin: 0 0 8px;
+    }
+    .coverage-item p { color: var(--muted); margin: 0; font-size: .92rem; }
+    .method {
+      background: var(--green);
+      color: #f9f8f0;
+      padding: 48px;
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 40px;
+      margin-bottom: 72px;
+    }
+    .method h2 {
+      font-size: 2.4rem;
+      line-height: 1.05;
+      margin: 10px 0;
+    }
+    .method p { color: #d5dfd8; }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .steps h3 { font-size: 1rem; margin: 0 0 8px; }
+    .steps p { font-size: .9rem; margin: 0; }
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      padding: 0 0 80px;
+    }
+    .about h2 { font-size: 2.3rem; margin: 8px 0; }
+    .about p { color: var(--muted); }
+    .about-links { display: flex; flex-direction: column; gap: 12px; }
+    .about-links a {
+      font-weight: 700;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
+    .contact {
+      border-top: 1px solid var(--line);
+      padding: 28px 0 40px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: var(--muted);
+      font-size: .82rem;
+    }
+    .contact strong { color: var(--ink); }
+    @media (max-width: 760px) {
+      header, main, footer { width: calc(100% - 28px); }
+      .topbar { align-items: flex-start; flex-direction: column; }
+      nav { gap: 15px; }
+      .hero { grid-template-columns: 1fr; padding: 60px 0 52px; gap: 20px; }
+      .hero h1 { font-size: clamp(3.3rem, 16vw, 5.5rem); }
+      .stories, .coverage-grid { grid-template-columns: 1fr; }
+      .story { min-height: 260px; }
+      .method { grid-template-columns: 1fr; padding: 28px; gap: 24px; }
+      .steps { grid-template-columns: 1fr; }
+      .about { grid-template-columns: 1fr; gap: 16px; padding-bottom: 55px; }
+      .section-head { align-items: flex-start; flex-direction: column; }
+      .contact { flex-direction: column; }
+    }
   </style>
 </head>
 <body>
-<header>
-  <div class="topbar"><a class="brand" href="#top">THE<span>NUMBERS</span>DESK.</a><nav aria-label="Main navigation"><a href="#investigations">Investigations</a><a href="#methods">Our methods</a><a href="#about">About</a><a href="mailto:hello@thenumbersdesk.co.uk">Contact</a></nav></div>
+<header id="top">
+  <div class="topbar">
+    <a class="brand" href="#top">THE<span>NUMBERS</span>DESK.</a>
+    <nav aria-label="Main navigation">
+      <a href="#investigations">Investigations</a>
+      <a href="#coverage">Coverage</a>
+      <a href="#methods">Our methods</a>
+      <a href="#about">About</a>
+    </nav>
+  </div>
 </header>
-<main id="top">
-  <section class="hero"><div><div class="eyebrow">Independent data journalism · United Kingdom</div><h1>Stories hiding in plain sight.</h1><p>We use public records, code and careful reporting to show what the numbers mean for people across the UK.</p></div><aside class="hero-note"><strong>Numbers are the beginning, not the end.</strong>Every investigation should show where the data came from, what it can tell us, and what it cannot.</aside></section>
-  <section id="investigations"><div class="section-head"><h2>On the desk</h2><p>Investigations in development — not published findings.</p></div>
+
+<main>
+  <section class="hero">
+    <div>
+      <div class="eyebrow">Independent data journalism · Global perspective</div>
+      <h1>Stories hiding in plain sight.</h1>
+      <p>We use data, public records, code and investigative reporting to explain the forces shaping our world — and the people behind the numbers.</p>
+    </div>
+    <aside class="hero-note">
+      <strong>Numbers are the beginning, not the end.</strong>
+      Every investigation should show where the data came from, what it can tell us, what it cannot, and whose lives the numbers represent.
+    </aside>
+  </section>
+
+  <section id="investigations">
+    <div class="section-head">
+      <h2>On the desk</h2>
+      <p>Reporting plans in development — not published findings.</p>
+    </div>
     <div class="stories">
-      <a class="story" href="mailto:hello@thenumbersdesk.co.uk?subject=Transport%20investigation"><span class="tag">Transport · UK</span><h3>What the departure board doesn’t tell you</h3><p>A planned look at punctuality data, airport patterns and the gaps between headline performance figures and a passenger’s experience.</p><span class="status">Reporting plan in development ↗</span></a>
-      <a class="story" href="mailto:hello@thenumbersdesk.co.uk?subject=Health%20investigation"><span class="tag">Health · Local data</span><h3>The postcode gap in the queue</h3><p>A proposed investigation into NHS waiting-time data and how experiences can vary between places. No conclusions drawn yet.</p><span class="status">Reporting plan in development ↗</span></a>
-      <a class="story" href="mailto:hello@thenumbersdesk.co.uk?subject=Migration%20investigation"><span class="tag">People · ONS</span><h3>Where are young adults actually moving?</h3><p>A planned exploration of official migration data to understand how young adults’ moves differ across UK local authorities.</p><span class="status">Reporting plan in development ↗</span></a>
+      <article class="story">
+        <span class="tag">Transport · UK</span>
+        <h3>What the departure board doesn’t tell you</h3>
+        <p>A proposed look at transport punctuality data and the gap between headline performance figures and a passenger’s experience.</p>
+        <span class="status">Reporting plan in development</span>
+      </article>
+      <article class="story">
+        <span class="tag">Health · Public services</span>
+        <h3>The postcode gap in the queue</h3>
+        <p>A planned investigation into waiting-time data and how access to care can vary between places. No conclusions drawn yet.</p>
+        <span class="status">Reporting plan in development</span>
+      </article>
+      <article class="story">
+        <span class="tag">People · Migration</span>
+        <h3>Where are young adults actually moving?</h3>
+        <p>A proposed exploration of official migration statistics to understand how young adults move within and between countries.</p>
+        <span class="status">Reporting plan in development</span>
+      </article>
     </div>
   </section>
-  <section id="methods" class="method"><div><div class="eyebrow" style="color:#f2a28e">How we work</div><h2>Find. Check. Explain.</h2><p>Good data journalism makes its workings visible. We link to original sources, explain decisions and correct mistakes in public.</p></div><div class="steps"><div><h3>01 / Find</h3><p>Start with a question that matters and locate the most authoritative available data.</p></div><div><h3>02 / Check</h3><p>Inspect coverage, definitions, missing values and limitations before drawing conclusions.</p></div><div><h3>03 / Explain</h3><p>Put the numbers in context with reporting, clear visuals and reproducible methods where possible.</p></div></div></section>
-  <section id="about" class="about"><div><div class="eyebrow">About the desk</div><h2>Independent, curious, accountable.</h2><p>The Numbers Desk is an independent data-journalism project founded and edited by Aanchal Ghatak. It investigates public-interest questions using open data, interviews and reproducible analysis for a UK audience.</p></div><div class="about-links"><a href="https://muckrack.com/aanchal-ghatak" target="_blank" rel="noopener">Read Aanchal’s published journalism ↗</a><a href="https://aanchalghatak05-creator.github.io/cardiff-coffee-ward-by-ward/" target="_blank" rel="noopener">Explore a data project: Cardiff coffee, ward by ward ↗</a><p>Editorial promise: visible sources, transparent methods, clear corrections and no claims beyond the evidence.</p></div></section>
+
+  <section id="coverage" class="coverage">
+    <div class="section-head">
+      <h2>What we investigate</h2>
+      <p>Follow the evidence wherever it leads.</p>
+    </div>
+    <div class="coverage-grid">
+      <div class="coverage-item">
+        <h3>Technology & AI</h3>
+        <p>Artificial intelligence, digital power, platforms and the data shaping our online lives.</p>
+      </div>
+      <div class="coverage-item">
+        <h3>Economics & work</h3>
+        <p>Prices, jobs, inequality, trade and the forces shaping livelihoods.</p>
+      </div>
+      <div class="coverage-item">
+        <h3>Climate & resources</h3>
+        <p>Energy, environmental change and how societies use the world's resources.</p>
+      </div>
+      <div class="coverage-item">
+        <h3>Health & education</h3>
+        <p>Public services, access, outcomes and the differences hidden in averages.</p>
+      </div>
+      <div class="coverage-item">
+        <h3>People & migration</h3>
+        <p>Population, movement, identity, opportunity and how communities change.</p>
+      </div>
+      <div class="coverage-item">
+        <h3>Power & public policy</h3>
+        <p>Institutions, public spending, accountability and decisions that affect everyday life.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="methods" class="method">
+    <div>
+      <div class="eyebrow" style="color:#f2a28e">How we work</div>
+      <h2>Find. Check. Explain.</h2>
+      <p>Good data journalism makes its workings visible. We aim to link original sources, explain our decisions and correct mistakes transparently.</p>
+    </div>
+    <div class="steps">
+      <div>
+        <h3>01 / Find</h3>
+        <p>Start with a question that matters and locate the most authoritative available data.</p>
+      </div>
+      <div>
+        <h3>02 / Check</h3>
+        <p>Inspect coverage, definitions, missing values and limitations before drawing conclusions.</p>
+      </div>
+      <div>
+        <h3>03 / Explain</h3>
+        <p>Put the numbers in context with reporting, clear visuals and reproducible methods where possible.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div>
+      <div class="eyebrow">About the desk</div>
+      <h2>Independent, curious, accountable.</h2>
+      <p>The Numbers Desk is an independent data-journalism project founded and edited by Aanchal Ghatak. It investigates public-interest questions around the world using data, interviews, public records and reproducible analysis.</p>
+    </div>
+    <div class="about-links">
+      <a href="https://muckrack.com/aanchal-ghatak" target="_blank" rel="noopener noreferrer">Read Aanchal’s published journalism ↗</a>
+      <a href="https://aanchalghatak05-creator.github.io/cardiff-coffee-ward-by-ward/" target="_blank" rel="noopener noreferrer">Explore a data project: Cardiff coffee, ward by ward ↗</a>
+      <p>Editorial promise: visible sources, transparent methods, clear corrections and no claims beyond the evidence.</p>
+    </div>
+  </section>
 </main>
-<footer><div class="contact"><div><strong>THE NUMBERS DESK.</strong><br>Independent data journalism for everyday life.</div><div>Prototype edition · 2026<br>Contact: <a href="mailto:hello@thenumbersdesk.co.uk">hello@thenumbersdesk.co.uk</a></div></div></footer>
+
+<footer>
+  <div class="contact">
+    <div><strong>THE NUMBERS DESK.</strong><br>Independent data journalism for a world of stories.</div>
+    <div>Founding edition · 2026<br>
+      Contact: <a href="mailto:hello@thenumbersdesk.co.uk">Email the desk</a>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
