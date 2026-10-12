@@ -1,62 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An original data-journalism investigation from The Numbers Desk. Sources, methodology and findings are published transparently.">
+  <meta name="theme-color" content="#f7f6f0">
+  <title>Article headline goes here — The Numbers Desk</title>
+  <style>
+    :root{--ink:#17211d;--muted:#59645e;--paper:#f7f6f0;--card:#fffef9;--line:#d9ddd4;--accent:#c3482e;--green:#254b3d;--max:1120px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.7}
+    a{color:var(--green);text-decoration-thickness:1px;text-underline-offset:4px}a:hover{color:var(--accent)}
+    header,main,footer{width:min(var(--max),calc(100% - 40px));margin-inline:auto}
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:25px 0;border-bottom:1px solid var(--line)}
+    .brand{font-size:1.05rem;font-weight:900;letter-spacing:.08em;text-decoration:none;color:var(--ink);white-space:nowrap}.brand span{color:var(--accent)}
+    nav{display:flex;gap:22px;flex-wrap:wrap}nav a{font-size:.9rem;text-decoration:none;color:var(--muted)}
+    .eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;font-weight:800;color:var(--accent)}
+    .article-head{max-width:900px;margin:0 auto;padding:76px 0 42px}.article-head h1{font-family:Georgia,serif;font-weight:500;letter-spacing:-.055em;font-size:clamp(2.8rem,7vw,5.8rem);line-height:.99;margin:18px 0 24px;max-width:900px}
+    .standfirst{font-family:Georgia,serif;font-size:clamp(1.25rem,2.5vw,1.65rem);line-height:1.45;color:#39463f;max-width:760px;margin:0 0 28px}
+    .byline{display:flex;gap:10px 24px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:17px;color:var(--muted);font-size:.88rem}.byline strong{color:var(--ink)}
+    .status-note{max-width:900px;margin:0 auto 30px;padding:14px 18px;border-left:3px solid var(--accent);background:#fff4ee;color:#663323;font-size:.9rem}
+    .layout{display:grid;grid-template-columns:minmax(0,1fr) 245px;gap:58px;align-items:start;padding:0 0 70px;max-width:1000px;margin:0 auto}
+    .story-body{min-width:0}.story-body h2{font-family:Georgia,serif;font-weight:500;letter-spacing:-.035em;font-size:2rem;line-height:1.15;margin:44px 0 14px}.story-body h3{font-size:1.1rem;margin:28px 0 8px}.story-body p{margin:0 0 20px}.story-body ul{padding-left:22px}.story-body li{margin-bottom:8px}
+    .key-points{background:var(--card);border:1px solid var(--line);padding:24px 26px;margin:26px 0 34px}.key-points h2{font-family:Georgia,serif;font-size:1.55rem;margin:0 0 14px}.key-points ul{margin:0;padding-left:20px}
+    figure{margin:30px 0 36px;background:var(--card);border:1px solid var(--line);padding:18px}.chart-placeholder{min-height:250px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px;border:1px dashed #aab5ab;background:#f4f4ed;color:var(--muted)}.chart-placeholder strong{color:var(--ink);font-family:Georgia,serif;font-size:1.3rem;margin-bottom:8px}figcaption{font-size:.82rem;color:var(--muted);margin-top:12px}
+    .sidebar{position:sticky;top:24px;border-top:3px solid var(--green);padding-top:15px;font-size:.9rem}.sidebar h2{font-family:Georgia,serif;font-weight:500;font-size:1.3rem;margin:0 0 10px}.sidebar ul{padding-left:18px}.sidebar li{margin:0 0 9px}.sidebar p{color:var(--muted)}
+    .method-box{background:#e9eee8;padding:22px 24px;margin:30px 0}.method-box h2{margin-top:0!important;font-size:1.65rem!important}
+    .author-box{border-top:1px solid var(--line);margin-top:46px;padding-top:24px;display:grid;grid-template-columns:1fr 2fr;gap:20px}.author-box h2{margin:0!important;font-size:1.55rem!important}.author-box p{font-size:.92rem;color:var(--muted)}
+    .corrections{border-top:1px solid var(--line);padding-top:20px;margin-top:34px;color:var(--muted);font-size:.88rem}
+    .footer{border-top:1px solid var(--line);padding:28px 0 40px;display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:.82rem}
+    @media(max-width:760px){header,main,footer{width:calc(100% - 28px)}.topbar{align-items:flex-start;flex-direction:column}nav{gap:15px}.article-head{padding:52px 0 32px}.layout{grid-template-columns:1fr;gap:28px}.sidebar{position:static;order:-1;background:var(--card);border:1px solid var(--line);border-top:3px solid var(--green);padding:18px}.story-body h2{font-size:1.8rem}.author-box{grid-template-columns:1fr;gap:0}.footer{flex-direction:column}}
+  </style>
+</head>
+<body>
+<header id="top">
+  <div class="topbar">
+    <a class="brand" href="index.html">THE<span>NUMBERS</span>DESK.</a>
+    <nav aria-label="Main navigation">
+      <a href="index.html#investigations">Investigations</a>
+      <a href="index.html#coverage">Coverage</a>
+      <a href="index.html#methods">Our methods</a>
+      <a href="index.html#about">About</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <article>
+    <header class="article-head">
+      <div class="eyebrow">[Topic] · [Geography]</div>
+      <h1>[Write a clear, specific headline]</h1>
+      <p class="standfirst">[In one or two sentences, explain the question this story answers, why it matters, and what readers will learn. Do not state a finding until the data has been checked.]</p>
+      <div class="byline">
+        <span>By <strong>Aanchal Ghatak</strong></span>
+        <span>Published: [Day Month Year]</span>
+        <span>Reading time: [X] min</span>
+      </div>
+    </header>
 
-THENUMBERSDESK.
-Investigations
-Coverage
-Our methods
-About
-[TOPIC] · [GEOGRAPHY]
-[Write a clear, specific headline]
-[In one or two sentences, explain the question this story answers, why it matters, and what readers will learn. Do not state a finding until the data has been checked.]
-By Aanchal Ghatak
-Published: [Day Month Year]
-Reading time: [X] min
-Template note: This is an unpublished article template. Replace all bracketed text, verify every claim and add the actual source links and visualisations before publication.
-[Opening paragraph] Start with the most important verified fact, a person affected by the issue, or a clear explanation of the question. Attribute claims and link to the original evidence.
-[Nut graf: explain what you investigated, which places or time period you examined, and why the question matters. State what the analysis can establish — and what it cannot.]
-What we found
-	•	[Verified finding one, with a date, unit and source.]
-	•	[Verified finding two, including a meaningful comparison where appropriate.]
-	•	[Important qualification or limitation readers should know.]
-What the data shows
-[Explain the main result in plain language. Give the reader enough context to understand the scale, trend or difference. Avoid implying that a correlation proves causation.]
-Chart 1: [Descriptive chart title]
-Add a chart built from the checked dataset here.
-Include units, time period, source and accessible labels.
-Figure 1. [Explain what is plotted, the unit of measurement, the time period and the key takeaway. Source: link to the original dataset.]
-[Interpret the visualisation. Mention any outliers, changes over time or differences between groups, and explain whether the data supports the interpretation.]
-Why it matters
-[Add reporting beyond the spreadsheet: relevant policy context, expert analysis, documents or interviews with people affected. Clearly distinguish evidence from interpretation.]
-[Include a second chart or table only if it adds a distinct insight. Explain the measure and its limitations in the text, not only in the caption.]
-What the numbers cannot tell us
-[Be specific about missing data, changes in definitions, incomplete coverage, uncertainty, possible confounding factors and what this analysis does not prove.]
-Methodology
-Research question: [Write the exact question the analysis set out to answer.]
-Data and period: [Name the dataset publisher, dataset/table, URL, download date and dates covered.]
-Approach: [Describe filtering, cleaning, calculations, comparisons and any exclusions. Define important terms and denominators.]
-Checks: [Explain validation, cross-checks, treatment of missing values and how results were reproduced.]
-Limitations: [Describe the main caveats and any unanswered questions.]
-Code: [Link to a public notebook or repository if available; otherwise remove this line.]
-Sources and further reading
-	1	[Organisation], [dataset or report title] — [what it contributes to this story].
-	2	[Organisation], [second source title] — [why it is relevant].
-	3	[Primary document or interview], [date and link where publication is permitted].
-All links and figures should be checked before publication. Prefer original datasets and primary documents over articles that merely repeat the numbers.
-ABOUT THE AUTHOR
-Aanchal Ghatak
-Aanchal Ghatak is a journalist and data-journalism graduate who has reported on technology, business and public-interest questions for publications including Computerworld, CIO.com and Dataquest. She founded The Numbers Desk to investigate stories through data, documents and reporting.
-Read more of Aanchal’s journalism ↗ · View a data project ↗
-Corrections and updates: [State “No corrections or updates at time of publication” only after checking, or list changes with dates. Provide a contact route for readers to flag errors.]
-In this story
-	•	What we found
-	•	What the data shows
-	•	Why it matters
-	•	Limitations
-	•	Methodology
-	•	Sources
-	•	About the author
-Editorial standard Show the evidence, explain the method and be honest about uncertainty.
-← Back to The Numbers Desk
-THE NUMBERS DESK.
-Independent data journalism for a world of stories.
-Founding edition · 2026
-Back to homepage
+    <div class="status-note"><strong>Template note:</strong> This is an unpublished article template. Replace all bracketed text, verify every claim and add the actual source links and visualisations before publication.</div>
+
+    <div class="layout">
+      <div class="story-body">
+        <p><strong>[Opening paragraph]</strong> Start with the most important verified fact, a person affected by the issue, or a clear explanation of the question. Attribute claims and link to the original evidence.</p>
+        <p>[Nut graf: explain what you investigated, which places or time period you examined, and why the question matters. State what the analysis can establish — and what it cannot.]</p>
+
+        <section class="key-points" aria-labelledby="key-findings">
+          <h2 id="key-findings">What we found</h2>
+          <ul>
+            <li>[Verified finding one, with a date, unit and source.]</li>
+            <li>[Verified finding two, including a meaningful comparison where appropriate.]</li>
+            <li>[Important qualification or limitation readers should know.]</li>
+          </ul>
+        </section>
+
+        <h2 id="the-data">What the data shows</h2>
+        <p>[Explain the main result in plain language. Give the reader enough context to understand the scale, trend or difference. Avoid implying that a correlation proves causation.]</p>
+        <figure>
+          <div class="chart-placeholder" role="img" aria-label="Placeholder for the first data visualisation">
+            <strong>Chart 1: [Descriptive chart title]</strong>
+            <span>Add a chart built from the checked dataset here.</span>
+            <span>Include units, time period, source and accessible labels.</span>
+          </div>
+          <figcaption><strong>Figure 1.</strong> [Explain what is plotted, the unit of measurement, the time period and the key takeaway. Source: link to the original dataset.]</figcaption>
+        </figure>
+        <p>[Interpret the visualisation. Mention any outliers, changes over time or differences between groups, and explain whether the data supports the interpretation.]</p>
+
+        <h2 id="why-it-matters">Why it matters</h2>
+        <p>[Add reporting beyond the spreadsheet: relevant policy context, expert analysis, documents or interviews with people affected. Clearly distinguish evidence from interpretation.]</p>
+        <p>[Include a second chart or table only if it adds a distinct insight. Explain the measure and its limitations in the text, not only in the caption.]</p>
+
+        <h2 id="what-we-cannot-tell">What the numbers cannot tell us</h2>
+        <p>[Be specific about missing data, changes in definitions, incomplete coverage, uncertainty, possible confounding factors and what this analysis does not prove.]</p>
+
+        <section class="method-box" id="methodology">
+          <h2>Methodology</h2>
+          <p><strong>Research question:</strong> [Write the exact question the analysis set out to answer.]</p>
+          <p><strong>Data and period:</strong> [Name the dataset publisher, dataset/table, URL, download date and dates covered.]</p>
+          <p><strong>Approach:</strong> [Describe filtering, cleaning, calculations, comparisons and any exclusions. Define important terms and denominators.]</p>
+          <p><strong>Checks:</strong> [Explain validation, cross-checks, treatment of missing values and how results were reproduced.]</p>
+          <p><strong>Limitations:</strong> [Describe the main caveats and any unanswered questions.]</p>
+          <p><strong>Code:</strong> [Link to a public notebook or repository if available; otherwise remove this line.]</p>
+        </section>
+
+        <h2 id="sources">Sources and further reading</h2>
+        <ol>
+          <li>[Organisation], <a href="https://example.com">[dataset or report title]</a> — [what it contributes to this story].</li>
+          <li>[Organisation], <a href="https://example.com">[second source title]</a> — [why it is relevant].</li>
+          <li>[Primary document or interview], [date and link where publication is permitted].</li>
+        </ol>
+        <p>All links and figures should be checked before publication. Prefer original datasets and primary documents over articles that merely repeat the numbers.</p>
+
+        <section class="author-box" id="author">
+          <div><div class="eyebrow">About the author</div><h2>Aanchal Ghatak</h2></div>
+          <div>
+            <p>Aanchal Ghatak is a journalist and data-journalism graduate who has reported on technology, business and public-interest questions for publications including Computerworld, CIO.com and Dataquest. She founded The Numbers Desk to investigate stories through data, documents and reporting.</p>
+            <p><a href="https://muckrack.com/aanchal-ghatak" target="_blank" rel="noopener noreferrer">Read more of Aanchal’s journalism ↗</a> · <a href="https://aanchalghatak05-creator.github.io/cardiff-coffee-ward-by-ward/" target="_blank" rel="noopener noreferrer">View a data project ↗</a></p>
+          </div>
+        </section>
+        <div class="corrections"><strong>Corrections and updates:</strong> [State “No corrections or updates at time of publication” only after checking, or list changes with dates. Provide a contact route for readers to flag errors.]</div>
+      </div>
+
+      <aside class="sidebar" aria-label="In this story">
+        <h2>In this story</h2>
+        <ul>
+          <li><a href="#key-findings">What we found</a></li>
+          <li><a href="#the-data">What the data shows</a></li>
+          <li><a href="#why-it-matters">Why it matters</a></li>
+          <li><a href="#what-we-cannot-tell">Limitations</a></li>
+          <li><a href="#methodology">Methodology</a></li>
+          <li><a href="#sources">Sources</a></li>
+          <li><a href="#author">About the author</a></li>
+        </ul>
+        <p><strong>Editorial standard</strong><br>Show the evidence, explain the method and be honest about uncertainty.</p>
+        <p><a href="index.html">← Back to The Numbers Desk</a></p>
+      </aside>
+    </div>
+  </article>
+</main>
+<footer>
+  <div class="footer">
+    <div><strong>THE NUMBERS DESK.</strong><br>Independent data journalism for a world of stories.</div>
+    <div>Founding edition · 2026<br><a href="index.html">Back to homepage</a></div>
+  </div>
+</footer>
+</body>
+</html>
