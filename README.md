@@ -1,4 +1,4 @@
-# The Numbers Desk — website starter
+# The Numbers Desk: website starter
 
 This is a first independent-hosting starter based on the existing The Numbers Desk preview. It is a static website and does not yet include a CMS or a custom domain. The three story cards are clearly labelled as reporting plans, not published findings.
 
